@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemHeading from './ItemHeading/ItemHeading.jsx'
 
 class ItemInfoContainer extends React.Component {
     constructor(props) {
@@ -7,7 +8,10 @@ class ItemInfoContainer extends React.Component {
 
     render() {
         return (
+            <div className='item-info'>
             <h1>Item Info Container</h1>
+            <ItemHeading />
+            </div>
         );
     }
 

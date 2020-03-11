@@ -3,4 +3,4 @@ import { render } from 'react-dom'
 
 import ItemInfoContainer from './ItemInfoContainer/ItemInfoContainer.jsx'
 
-render(<ItemInfoContainer/>, document.getElementById('iteminfocontainer'))
+render(<ItemInfoContainer/>, document.getElementById('item-info-container'))
