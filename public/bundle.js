@@ -29185,6 +29185,26 @@ var _ItemHeading = __webpack_require__(18);
 
 var _ItemHeading2 = _interopRequireDefault(_ItemHeading);
 
+var _ItemInfoOptions = __webpack_require__(27);
+
+var _ItemInfoOptions2 = _interopRequireDefault(_ItemInfoOptions);
+
+var _ItemInfoOrdering = __webpack_require__(26);
+
+var _ItemInfoOrdering2 = _interopRequireDefault(_ItemInfoOrdering);
+
+var _ItemInfoDetails = __webpack_require__(28);
+
+var _ItemInfoDetails2 = _interopRequireDefault(_ItemInfoDetails);
+
+var _ItemInfoShipping = __webpack_require__(31);
+
+var _ItemInfoShipping2 = _interopRequireDefault(_ItemInfoShipping);
+
+var _ItemInfoPolicies = __webpack_require__(37);
+
+var _ItemInfoPolicies2 = _interopRequireDefault(_ItemInfoPolicies);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29213,7 +29233,12 @@ var ItemInfoContainer = function (_React$Component) {
                     null,
                     'Item Info Container'
                 ),
-                _react2.default.createElement(_ItemHeading2.default, null)
+                _react2.default.createElement(_ItemHeading2.default, null),
+                _react2.default.createElement(_ItemInfoOptions2.default, null),
+                _react2.default.createElement(_ItemInfoOrdering2.default, null),
+                _react2.default.createElement(_ItemInfoDetails2.default, null),
+                _react2.default.createElement(_ItemInfoShipping2.default, null),
+                _react2.default.createElement(_ItemInfoPolicies2.default, null)
             );
         }
     }]);
@@ -29459,6 +29484,570 @@ var ItemInfoPrice = function ItemInfoPrice(props) {
 };
 
 exports.default = ItemInfoPrice;
+
+/***/ }),
+/* 25 */,
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoOrdering = function ItemInfoOrdering(props) {
+  var inserts = ['insert1', 'insert2'];
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-ordering' },
+    _react2.default.createElement(
+      'button',
+      { className: 'add-to-cart' },
+      'Add To Cart button'
+    ),
+    inserts.map(function (insert, index) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'item-order-insert', key: 'insert' + index },
+        insert
+      );
+    })
+  );
+};
+
+exports.default = ItemInfoOrdering;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoOptions = function ItemInfoOptions(props) {
+  var itemOptions = [1, 2, 3];
+  return _react2.default.createElement(
+    'label',
+    null,
+    'Select option:',
+    _react2.default.createElement(
+      'select',
+      null,
+      itemOptions.map(function (itemOpt, index) {
+        return _react2.default.createElement(
+          'option',
+          { key: 'option' + index, value: '' + itemOpt },
+          itemOpt
+        );
+      })
+    )
+  );
+};
+
+exports.default = ItemInfoOptions;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ItemInfoQuickFacts = __webpack_require__(29);
+
+var _ItemInfoQuickFacts2 = _interopRequireDefault(_ItemInfoQuickFacts);
+
+var _ItemInfoDescription = __webpack_require__(30);
+
+var _ItemInfoDescription2 = _interopRequireDefault(_ItemInfoDescription);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoDetails = function ItemInfoDetails(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-details' },
+    _react2.default.createElement(_ItemInfoQuickFacts2.default, null),
+    _react2.default.createElement(_ItemInfoDescription2.default, null)
+  );
+};
+
+exports.default = ItemInfoDetails;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoQuickFacts = function ItemInfoQuickFacts(props) {
+  var quickFacts = ['quick fact 1', 'quick fact 2'];
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-quick-facts' },
+    quickFacts.map(function (fact, index) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'quick-fact', key: 'quick-fact' + index },
+        fact
+      );
+    })
+  );
+};
+
+exports.default = ItemInfoQuickFacts;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemInfoDescription = function (_React$Component) {
+  _inherits(ItemInfoDescription, _React$Component);
+
+  function ItemInfoDescription(props) {
+    _classCallCheck(this, ItemInfoDescription);
+
+    var _this = _possibleConstructorReturn(this, (ItemInfoDescription.__proto__ || Object.getPrototypeOf(ItemInfoDescription)).call(this, props));
+
+    _this.state = {
+      expanded: false,
+      description: 'What is Lorem Ipsum?\n        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n        \n        Why do we use it?\n        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n        \n        \n        Where does it come from?\n        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.'
+    };
+    return _this;
+  }
+
+  _createClass(ItemInfoDescription, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'item-info-description' },
+          _react2.default.createElement(
+            'p',
+            null,
+            this.state.description
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: 'learn-more' },
+          'Learn more about this item'
+        )
+      );
+    }
+  }]);
+
+  return ItemInfoDescription;
+}(_react2.default.Component);
+
+exports.default = ItemInfoDescription;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ItemInfoShipTime = __webpack_require__(32);
+
+var _ItemInfoShipTime2 = _interopRequireDefault(_ItemInfoShipTime);
+
+var _ItemInfoShipFrom = __webpack_require__(33);
+
+var _ItemInfoShipFrom2 = _interopRequireDefault(_ItemInfoShipFrom);
+
+var _ItemInfoShipCost = __webpack_require__(34);
+
+var _ItemInfoShipCost2 = _interopRequireDefault(_ItemInfoShipCost);
+
+var _ItemInfoShipInfo = __webpack_require__(35);
+
+var _ItemInfoShipInfo2 = _interopRequireDefault(_ItemInfoShipInfo);
+
+var _ItemInfoShipUpgrade = __webpack_require__(36);
+
+var _ItemInfoShipUpgrade2 = _interopRequireDefault(_ItemInfoShipUpgrade);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoShipping = function ItemInfoShipping(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-shipping' },
+    _react2.default.createElement(_ItemInfoShipTime2.default, null),
+    _react2.default.createElement(_ItemInfoShipFrom2.default, null),
+    _react2.default.createElement(_ItemInfoShipCost2.default, null),
+    _react2.default.createElement(_ItemInfoShipInfo2.default, null),
+    _react2.default.createElement(_ItemInfoShipUpgrade2.default, null)
+  );
+};
+
+exports.default = ItemInfoShipping;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoShipTime = function ItemInfoShipTime(props) {
+  return _react2.default.createElement(
+    'span',
+    { className: 'item-info-ship-time' },
+    ' Will ship in [X] days '
+  );
+};
+
+exports.default = ItemInfoShipTime;
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoShipFrom = function ItemInfoShipFrom(props) {
+  return _react2.default.createElement(
+    'span',
+    { className: 'item-info-ship-from' },
+    ' Shipping from [x]'
+  );
+};
+
+exports.default = ItemInfoShipFrom;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoShipCost = function ItemInfoShipCost(props) {
+    return _react2.default.createElement(
+        'div',
+        { className: 'item-info-ship-cost' },
+        ' This item ships free '
+    );
+};
+exports.default = ItemInfoShipCost;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemInfoShipInfo = function (_React$Component) {
+  _inherits(ItemInfoShipInfo, _React$Component);
+
+  function ItemInfoShipInfo(props) {
+    _classCallCheck(this, ItemInfoShipInfo);
+
+    var _this = _possibleConstructorReturn(this, (ItemInfoShipInfo.__proto__ || Object.getPrototypeOf(ItemInfoShipInfo)).call(this, props));
+
+    _this.state = {
+      expanderTitle: 'Deliver to | Get Shipping Cost',
+      expanded: false
+    };
+    return _this;
+  }
+
+  _createClass(ItemInfoShipInfo, [{
+    key: 'render',
+    value: function render() {
+      return (
+        // button triggers expansion/visibility of selector for country, field for zip
+        _react2.default.createElement(
+          'button',
+          { className: 'item-info-ship-info' },
+          this.state.expanderTitle
+        )
+      );
+    }
+  }]);
+
+  return ItemInfoShipInfo;
+}(_react2.default.Component);
+
+exports.default = ItemInfoShipInfo;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoShipUpgrade = function ItemInfoShipUpgrade(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-ship-upgrade' },
+    ' Shipping upgrades available in the cart '
+  );
+};
+
+exports.default = ItemInfoShipUpgrade;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ItemInfoPolicyDetails = __webpack_require__(38);
+
+var _ItemInfoPolicyDetails2 = _interopRequireDefault(_ItemInfoPolicyDetails);
+
+var _ItemInfoPoliciesModal = __webpack_require__(39);
+
+var _ItemInfoPoliciesModal2 = _interopRequireDefault(_ItemInfoPoliciesModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoPolicies = function ItemInfoPolicies(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-policies' },
+    _react2.default.createElement(_ItemInfoPolicyDetails2.default, null),
+    _react2.default.createElement(_ItemInfoPoliciesModal2.default, null)
+  );
+};
+
+exports.default = ItemInfoPolicies;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoPolicyDetails = function ItemInfoPolicyDetails(props) {
+  var policies = ['policy1', 'policy2'];
+  return _react2.default.createElement(
+    _react2.default.Fragment,
+    null,
+    policies.map(function (policy, index) {
+      return _react2.default.createElement(
+        'div',
+        { key: 'policy' + index, className: 'item-info-policy-details' },
+        ' ',
+        policy,
+        ' '
+      );
+    })
+  );
+};
+
+exports.default = ItemInfoPolicyDetails;
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemInfoPoliciesModal = function (_React$Component) {
+  _inherits(ItemInfoPoliciesModal, _React$Component);
+
+  function ItemInfoPoliciesModal(props) {
+    _classCallCheck(this, ItemInfoPoliciesModal);
+
+    var _this = _possibleConstructorReturn(this, (ItemInfoPoliciesModal.__proto__ || Object.getPrototypeOf(ItemInfoPoliciesModal)).call(this, props));
+
+    _this.state = {
+      policyModalOpen: false
+    };
+    return _this;
+  }
+
+  _createClass(ItemInfoPoliciesModal, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'button',
+        { className: 'item-info-policies-modal-button' },
+        'View shop policies'
+      );
+    }
+  }]);
+
+  return ItemInfoPoliciesModal;
+}(_react2.default.Component);
+
+;
+
+exports.default = ItemInfoPoliciesModal;
 
 /***/ })
 /******/ ]);
