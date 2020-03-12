@@ -29205,6 +29205,14 @@ var _ItemInfoPolicies = __webpack_require__(37);
 
 var _ItemInfoPolicies2 = _interopRequireDefault(_ItemInfoPolicies);
 
+var _ItemInfoFaqs = __webpack_require__(40);
+
+var _ItemInfoFaqs2 = _interopRequireDefault(_ItemInfoFaqs);
+
+var _ItemInfoMeetSeller = __webpack_require__(44);
+
+var _ItemInfoMeetSeller2 = _interopRequireDefault(_ItemInfoMeetSeller);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29238,7 +29246,9 @@ var ItemInfoContainer = function (_React$Component) {
                 _react2.default.createElement(_ItemInfoOrdering2.default, null),
                 _react2.default.createElement(_ItemInfoDetails2.default, null),
                 _react2.default.createElement(_ItemInfoShipping2.default, null),
-                _react2.default.createElement(_ItemInfoPolicies2.default, null)
+                _react2.default.createElement(_ItemInfoPolicies2.default, null),
+                _react2.default.createElement(_ItemInfoFaqs2.default, null),
+                _react2.default.createElement(_ItemInfoMeetSeller2.default, null)
             );
         }
     }]);
@@ -30048,6 +30058,295 @@ var ItemInfoPoliciesModal = function (_React$Component) {
 ;
 
 exports.default = ItemInfoPoliciesModal;
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ItemInfoFaqsButton = __webpack_require__(41);
+
+var _ItemInfoFaqsButton2 = _interopRequireDefault(_ItemInfoFaqsButton);
+
+var _ItemInfoFaqDetails = __webpack_require__(42);
+
+var _ItemInfoFaqDetails2 = _interopRequireDefault(_ItemInfoFaqDetails);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemInfoFaqs = function (_React$Component) {
+  _inherits(ItemInfoFaqs, _React$Component);
+
+  function ItemInfoFaqs(props) {
+    _classCallCheck(this, ItemInfoFaqs);
+
+    var _this = _possibleConstructorReturn(this, (ItemInfoFaqs.__proto__ || Object.getPrototypeOf(ItemInfoFaqs)).call(this, props));
+
+    _this.state = {
+      expanderTitle: 'FAQs',
+      expanded: false
+    };
+    return _this;
+  }
+
+  _createClass(ItemInfoFaqs, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'item-info-faqs' },
+        _react2.default.createElement(_ItemInfoFaqsButton2.default, { expanderTitle: this.state.expanderTitle }),
+        _react2.default.createElement(_ItemInfoFaqDetails2.default, null)
+      );
+    }
+  }]);
+
+  return ItemInfoFaqs;
+}(_react2.default.Component);
+
+exports.default = ItemInfoFaqs;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoFaqsButton = function ItemInfoFaqsButton(props) {
+  return (
+    // button triggers expansion/visibility of selector for country, field for zip
+    _react2.default.createElement(
+      'button',
+      { className: 'item-info-faqs-button' },
+      props.expanderTitle
+    )
+  );
+};
+
+exports.default = ItemInfoFaqsButton;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ItemInfoFaqDetail = __webpack_require__(43);
+
+var _ItemInfoFaqDetail2 = _interopRequireDefault(_ItemInfoFaqDetail);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemInfoFaqDetails = function (_React$Component) {
+  _inherits(ItemInfoFaqDetails, _React$Component);
+
+  function ItemInfoFaqDetails(props) {
+    _classCallCheck(this, ItemInfoFaqDetails);
+
+    var _this = _possibleConstructorReturn(this, (ItemInfoFaqDetails.__proto__ || Object.getPrototypeOf(ItemInfoFaqDetails)).call(this, props));
+
+    _this.state = {
+      faqDetails: [{ faqid: 0, question: 'Is this a question?', answer: "Yes it is" }, { faqid: 1, question: 'Was I a good boy?', answer: "No, I hear you were the best" }]
+    };
+    return _this;
+  }
+
+  _createClass(ItemInfoFaqDetails, [{
+    key: 'render',
+    value: function render() {
+      return this.state.faqDetails.map(function (faq) {
+        return _react2.default.createElement(_ItemInfoFaqDetail2.default, { faq: faq, key: 'faqid-' + faq.faqid });
+      });
+    }
+  }]);
+
+  return ItemInfoFaqDetails;
+}(_react2.default.Component);
+
+exports.default = ItemInfoFaqDetails;
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ItemInfoFaqDetail = function (_React$Component) {
+  _inherits(ItemInfoFaqDetail, _React$Component);
+
+  function ItemInfoFaqDetail(props) {
+    _classCallCheck(this, ItemInfoFaqDetail);
+
+    var _this = _possibleConstructorReturn(this, (ItemInfoFaqDetail.__proto__ || Object.getPrototypeOf(ItemInfoFaqDetail)).call(this, props));
+
+    _this.state = { expanded: false };
+    return _this;
+  }
+
+  _createClass(ItemInfoFaqDetail, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'item-info-faq-detail' },
+        _react2.default.createElement(
+          'button',
+          { className: 'item-info-faq-detail-button' },
+          _react2.default.createElement(
+            'span',
+            { className: 'item-info-faq-question' },
+            this.props.faq.question
+          ),
+          _react2.default.createElement('span', { className: 'item-info-faq-arrow' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'item-info-faq-answer' },
+          this.props.faq.answer
+        )
+      );
+    }
+  }]);
+
+  return ItemInfoFaqDetail;
+}(_react2.default.Component);
+
+exports.default = ItemInfoFaqDetail;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ItemInfoMeetSeller = function ItemInfoMeetSeller(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'item-info-meet-seller' },
+    _react2.default.createElement(
+      'p',
+      { className: 'item-info-meet-seller-caption' },
+      'Meet your seller'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'item-info-seller-preview' },
+      _react2.default.createElement('span', { className: 'item-info-seller-preview-pic' }),
+      _react2.default.createElement(
+        'span',
+        { className: 'item-info-seller-preview-info' },
+        _react2.default.createElement(
+          'div',
+          { className: 'item-info-seller-preview-name' },
+          'Seller Name'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'item-info-seller-preview-title' },
+          'Owner of ',
+          _react2.default.createElement(
+            'a',
+            { href: '' },
+            'Shop'
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'item-info-message-seller' },
+      'Message Owner'
+    ),
+    _react2.default.createElement(
+      'p',
+      { className: 'item-info-seller-response-time' },
+      'This seller usually reponds ',
+      _react2.default.createElement(
+        'strong',
+        null,
+        'within 34 hours'
+      )
+    )
+  );
+};
+
+exports.default = ItemInfoMeetSeller;
 
 /***/ })
 /******/ ]);
