@@ -1,11 +1,21 @@
 import React from 'react';
-import ItemInfoPolicyDetails from './ItemInfoPolicyDetails.jsx';
 import ItemInfoPoliciesModal from './ItemInfoPoliciesModal.jsx';
 
 const ItemInfoPolicies = (props)=>(
   <div className='item-info-policies'>
-    <ItemInfoPolicyDetails />
-    <ItemInfoPoliciesModal />
+    <React.Fragment>
+      <div className='item-info-exchanges'>Exchanges {props.exchanges ? "" : 'not'} accepted</div>
+      <div className='item-info-returns'>Returns {props.returns ? "" : 'not'} accepted</div>
+      <div className='item-info-refunds'>Refunds {props.refunds ? "" : 'not'} issued</div>
+      {(props.exchanges || props.returns || props.refunds) ? <div className='item-info-exceptions'>Exceptions may apply.</div> : ""}
+    </React.Fragment>
+    <ItemInfoPoliciesModal
+      exchanges={props.exchanges}
+      returns={props.returns}
+      refunds={props.refunds}
+      paymentsAccepted={props.paymentsAccepted}
+      customPolicies={props.customPolicies}
+    />
   </div>
 );
 

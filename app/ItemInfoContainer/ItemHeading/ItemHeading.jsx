@@ -1,16 +1,11 @@
 import React from 'react';
-import SellerRating from './SellerRating.jsx';
-import ItemTitle from './ItemTitle.jsx';
-import ItemInfoBadges from './ItemInfoBadges.jsx';
-import ItemInfoPrice from './ItemInfoPrice.jsx';
 
 var ItemHeading = (props)=>(
   <div className='item-heading'>
-    Item Heading
-    <SellerRating />
-    <ItemTitle />
-    <ItemInfoBadges />
-    <ItemInfoPrice />
+    <span className='item-info-store-name'>{props.storeName}</span>
+    <span className='item-info-store-rating'><a href='#reviews'>{props.storeRating}({props.storeReviews})</a></span>
+    <div className='item-info-item-name'>{props.itemName}</div>
+    <div className='item-info-badges'>{props.badges}</div>
   </div>
 )
 

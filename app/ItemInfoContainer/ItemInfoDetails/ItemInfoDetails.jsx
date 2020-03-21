@@ -4,8 +4,8 @@ import ItemInfoDescription from './ItemInfoDescription.jsx';
 
 const ItemInfoDetails = (props)=>(
   <div className='item-info-details'>
-  <ItemInfoQuickFacts />
-  <ItemInfoDescription />
+  <ItemInfoQuickFacts quickFacts={props.quickFacts}/>
+  <ItemInfoDescription description={props.description} />
   </div>
 );
 

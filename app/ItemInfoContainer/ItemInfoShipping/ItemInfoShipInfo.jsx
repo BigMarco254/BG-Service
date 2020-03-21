@@ -4,7 +4,7 @@ class ItemInfoShipInfo extends React.Component{
   constructor(props) {
     super(props);
   this.state = {
-    expanderTitle: 'Deliver to | Get Shipping Cost',
+    expanderTitle: props.shipCost ? 'Deliver to' : 'Get Shipping Cost',
     expanded: false
   }
 }

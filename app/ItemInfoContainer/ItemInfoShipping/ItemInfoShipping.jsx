@@ -1,20 +1,23 @@
 import React from 'react';
-import ItemInfoShipTime from './ItemInfoShipTime.jsx';
-import ItemInfoShipFrom from './ItemInfoShipFrom.jsx';
 import ItemInfoShipCost from './ItemInfoShipCost.jsx';
 import ItemInfoShipInfo from './ItemInfoShipInfo.jsx';
-import ItemInfoShipUpgrade from './ItemInfoShipUpgrade.jsx';
 
 const ItemInfoShipping = (props)=>(
   <div className='item-info-shipping'>
-    <ItemInfoShipTime />
-    <ItemInfoShipFrom />
+    <span className='item-info-ship-estimate'>
+      <div className='item-info-label'>Ready to ship in</div>
+      <div className='item-info-ship-time'>{props.shipTime}</div>
+    </span>
+    <span className='item-info-ship-loc'>
+      <div className='item-info-label'>From</div>
+      <div className='item-info-ship-from'>{props.shipFrom}</div>
+    </span>
     {/* Conditionals - Free shipping > button is 'Deliver to', else 'Get shipping cost' */}
-    <ItemInfoShipCost />
+    <ItemInfoShipCost shipCost={props.shipCost}/>
     {/* button */}
-    <ItemInfoShipInfo />
+    <ItemInfoShipInfo shipCost={props.shipCost}/>
     {/* charge for shipping > conditional element to explain shipping upgrades */}
-    <ItemInfoShipUpgrade />
+    <div className='item-info-ship-upgrade'> Shipping upgrades available in the cart </div>
   </div>
 );
 

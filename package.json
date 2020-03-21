@@ -1,12 +1,12 @@
 {
-  "name": "marc-service",
+  "name": "brian-service",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "build": "webpack -p",
     "watch": "webpack -w",
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   "homepage": "https://github.com/Etsyocalypse/Marc-service#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.5",
     "prop-types": "^15.6.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
