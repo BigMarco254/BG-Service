@@ -8,15 +8,19 @@ const mongoPass = require('../config').mongoPass;
 // const MongoClient = require('mongodb').MongoClient;
 const uri = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0-jdvtt.mongodb.net/test?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true }, {useUnifiedTopology: true});
-client.connect(err => {
-  const collection = client.db("etsyPoc").collection("items");
-  // perform actions on the collection object
-  collection.find({_id: 111 }).toArray((err, results)=>{
-    console.log(err ? `err:${err}` : results);
-  });
-  client.close();
-});
 
+const getItemById = function (itemId, callback){
+  client.connect(err => {
+    const collection = client.db("etsyPoc").collection("items");
+    // perform actions on the collection object
+    collection.findOne({_id: itemId },(err, results)=>{
+      callback(err, results);
+    });
+    client.close();
+  });
+}
+
+module.exports = {getItemById};
 
 // Database Name
 // const dbName = 'test';
