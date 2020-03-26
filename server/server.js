@@ -1,21 +1,31 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const db = require('./db/db');
+const MongoClient = require('mongodb').MongoClient;
+const mongoUser = require('./config').mongoUser;
+const mongoPass = require('./config').mongoPass;
 
+// Connection URL
+const uri = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0-jdvtt.mongodb.net/test?retryWrites=true&w=majority`;
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect().then(()=>{
+  console.log('connected');
+});
 
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get("/items/:itemId", (req, res)=>{
   console.log("get received for item ", req.params.itemId);
-  db.getItemById(111, (err, results)=>{
-    if (err){
-      res.status(404).send("There was an error");
+  var itemId = +req.params.itemId;
+  client.db("etsyPoc").collection("items").findOne({_id: itemId }, (err, results)=>{
+    console.log(req.params.itemId);
+    if(err){
+      console.log('mongo error:', err);
     } else {
       res.send(results);
     }
-  })
-})
+  });
+});
 
 // app.get('/bundle', (req, res) => {
 //     res.writeHead(200, {

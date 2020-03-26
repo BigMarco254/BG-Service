@@ -1,5 +1,4 @@
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 const mongoUser = require('../config').mongoUser;
 const mongoPass = require('../config').mongoPass;
 
@@ -7,21 +6,37 @@ const mongoPass = require('../config').mongoPass;
 
 // const MongoClient = require('mongodb').MongoClient;
 const uri = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0-jdvtt.mongodb.net/test?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true }, {useUnifiedTopology: true});
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 const getItemById = function (itemId, callback){
   client.connect(err => {
     const collection = client.db("etsyPoc").collection("items");
     // perform actions on the collection object
+    if (err){
+       console.log(`connection error: ${err}`);
+      }
+      console.log('finding item: ',itemId);
     collection.findOne({_id: itemId },(err, results)=>{
+      client.close();
       callback(err, results);
     });
     client.close();
   });
+  client.close();
 }
+
+// getItemById(111,(err, results)=>{
+//   console.log(err ? `err: ${err}` : results);
+//   console.log(results);
+// });
 
 module.exports = {getItemById};
 
+// Query for Jaeson
+// collection.find({storeId:1},{limit:6 , projection:{imageArray:1}}).toArray()
+// .then(results => {
+//   console.log(results);
+// });
 // Database Name
 // const dbName = 'test';
 
