@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get("/items/:itemId", (req, res)=>{
   console.log("get received for item ", req.params.itemId);
   var itemId = +req.params.itemId;
-  client.db("etsyPoc").collection("items").findOne({_id: itemId }, (err, results)=>{
+  client.db("etsyPoc").collection("items").findOne({'itemId': itemId }, (err, results)=>{
     console.log(req.params.itemId);
     if(err){
       console.log('mongo error:', err);
