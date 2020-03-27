@@ -30,6 +30,9 @@ const getItemById = function (itemId, callback){
 //   console.log(results);
 // });
 
+// import command
+//.\mongoimport.exe --host Cluster0-shard-0/cluster0-shard-00-00-jdvtt.mongodb.net:27017,cluster0-shard-00-01-jdvtt.mongodb.net:27017,cluster0-shard-00-02-jdvtt.mongodb.net:27017 --ssl --username bpg031000 --password hratx47 --authenticationDatabase admin --db etsyPoc --collection items --type json --file codebeautify2.json --jsonArray
+
 module.exports = {getItemById};
 
 // Query for Jaeson
