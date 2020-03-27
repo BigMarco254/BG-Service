@@ -1,5 +1,5 @@
 {
-  "name": "brian-service",
+  "name": "bg-service",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,18 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Etsyocalypse/Marc-service.git"
+    "url": "git+https://github.com/Etsyocalypse/BG-Service.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Etsyocalypse/Marc-service/issues"
-  },
-  "homepage": "https://github.com/Etsyocalypse/Marc-service#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "mongodb": "^3.5.5",
-    "mongoose": "^5.9.5",
     "prop-types": "^15.6.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
