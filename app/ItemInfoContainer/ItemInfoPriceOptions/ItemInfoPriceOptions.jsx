@@ -27,7 +27,7 @@ class ItemInfoPriceOptions extends React.Component{
       <div className='item-info-price'>{this.state.priceString}</div>    
       {/* price options */}
       <div>
-        {console.log(this.props)}
+        {/* {console.log(this.props)} */}
         {this.props.pricedOptions.map((optionGroup, index)=>
           <ItemInfoOptionDropdown 
             key={`optionGroup${index}`}
