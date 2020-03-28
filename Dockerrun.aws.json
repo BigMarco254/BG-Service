@@ -1,0 +1,11 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "bpg031000/node-docker-etsy-poc-item-info"
+    },
+    "Ports": [
+        {
+        "ContainerPort": "4321"
+        }
+    ]
+}
