@@ -1,5 +1,4 @@
 node_modules
-public/bundle.js
 build
 npm-debug.log
 .env
