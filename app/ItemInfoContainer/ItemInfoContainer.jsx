@@ -71,11 +71,22 @@ class ItemInfoContainer extends React.Component {
         text: 'materials'
       }
     ]
+    document.addEventListener('onNavigate', ({id}) => {
+      console.log("change pages to: ", id);
+      axios.get(`http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/${id}`)
+      // axios.get(`http://localhost:4321/items/${id}`)
+      .then(res=>{
+        console.log(res.data);
+        this.setState({item: res.data, loading:false});
+      })
+      //change view based off of id
+      //setState to render new item
+  });
   }
 
   componentDidMount(){
     axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/111')
-    // axios.get('localhost:4321/items/111')
+    // axios.get('http://localhost:4321/items/111')
     .then(res=>{
       console.log(res.data);
       this.setState({item: res.data, loading:false});
@@ -109,7 +120,8 @@ class ItemInfoContainer extends React.Component {
           <ItemInfoOrdering
             inserts={this.state.item.inserts || ['niceChoice', 'othersWant']} />
           <ItemInfoDetails
-            quickFacts={this.state.item.quickFacts || this.quickFactsDefault}
+            // quickFactsHandmade={this.state.item['quickFacts-handmade']}
+            // quickFactsMaterials={this.state.item['quickFacts-materials']}
             description={this.state.item.description || ''}
             />
           <ItemInfoShipping
@@ -125,7 +137,7 @@ class ItemInfoContainer extends React.Component {
             customPolicies={this.state.item.storePolicies.custom || ''}
             />
           <ItemInfoFaqs
-            faqs={this.state.item.faqs || ''}
+            faqs={this.state.item.faqs || []}
             />
           <ItemInfoMeetSeller
             storeOwnerName={this.state.item.storeOwnerName || ''}

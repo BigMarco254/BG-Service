@@ -14,7 +14,7 @@ const ItemInfoPolicies = (props)=>(
       returns={props.returns}
       refunds={props.refunds}
       paymentsAccepted={props.paymentsAccepted}
-      customPolicies={props.customPolicies}
+      customPolicies={props.customPolicies || []}
     />
   </div>
 );
