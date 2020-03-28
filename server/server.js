@@ -36,6 +36,6 @@ app.get("/items/:itemId", (req, res)=>{
 // });
 
 
-app.listen(8080, () => {
-  console.log('Server listening on: 8080')
+app.listen(4321, () => {
+  console.log('Server listening on: 4321')
 })

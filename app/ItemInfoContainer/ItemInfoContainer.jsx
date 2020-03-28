@@ -74,7 +74,7 @@ class ItemInfoContainer extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:8080/items/111')
+    axios.get('http://localhost:4321/items/111')
     .then(res=>{
       console.log(res.data);
       this.setState({item: res.data, loading:false});
