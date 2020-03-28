@@ -21,6 +21,7 @@ app.get("/items/:itemId", (req, res)=>{
     console.log(req.params.itemId);
     if(err){
       console.log('mongo error:', err);
+      res.status(403).send("Error connecting to database");
     } else {
       res.send(results);
     }
