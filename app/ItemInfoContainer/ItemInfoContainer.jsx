@@ -85,7 +85,7 @@ class ItemInfoContainer extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/111')
+    axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/1')
     // axios.get('http://localhost:4321/items/111')
     .then(res=>{
       console.log(res.data);
