@@ -13,9 +13,9 @@ render(){
       -- Future Bootstrap Accordion -- <br></br>
       <button className='item-info-faqs-button'>FAQs</button> 
       {/* <ItemInfoFaqDetails /> */}
-      {this.props.faqs.map((faq)=>(
+      {this.props.faqs.map((faq, index)=>(
         // <ItemInfoFaqDetail faq={faq} key={`faqid-${faq.faqid}`}  />
-        <div className='item-info-faq-detail'>
+        <div key={index} className='item-info-faq-detail'>
         <button className="item-info-faq-detail-button">
         <span className='item-info-faq-question'>{faq.question}</span>
         <span className='item-info-faq-arrow'></span>

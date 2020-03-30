@@ -1,0 +1,17 @@
+.btn-showMore {
+    background-color: transparent;
+    border-radius: 24px;
+}
+
+.btn-showMore:hover {
+    background-color: rgba(34,34,34, 0.075);
+}
+
+.item-info-exchanges,
+.item-info-returns,
+.item-info-refunds,
+.item-info-exceptions {
+    color: rgb(34, 34, 34);
+    font-size: 16px;
+    font-weight: 300;
+}
